@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>@72.China — Sichuan &amp; Cantonese, Regent Street, Cambridge</title>
+<meta name="description" content="Authentic Sichuan and Cantonese cooking on Regent Street, Cambridge. Mapo tofu, hot &amp; sour soup, salt &amp; pepper squid. Dine in, takeaway, delivery.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#1A0F0E;
+    --crimson:#8B3A3A;
+    --crimson-deep:#6A2828;
+    --cream:#F4E4BC;
+    --cream-soft:#FAF0D6;
+    --amber:#D6863A;
+    --paper:#FCF6E7;
+    --serif:"DM Serif Display", "Noto Serif SC", Georgia, serif;
+    --sans:"DM Sans", system-ui, sans-serif;
+    --cn:"Noto Serif SC", "DM Serif Display", serif;
+    --rule:1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:var(--sans);
+    font-size:clamp(15px,.6vw + 13px,17px);
+    line-height:1.55;
+    color:var(--ink);
+    background:var(--paper);
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";
+    position:fixed; inset:0;
+    background-image:radial-gradient(circle at 1px 1px, rgba(26,15,14,.05) 1px, transparent 0);
+    background-size:3px 3px;
+    pointer-events:none;
+    z-index:1;
+    mix-blend-mode:multiply;
+  }
+  h1,h2,h3{
+    font-family:var(--serif);
+    font-weight:400;
+    line-height:.95;
+    letter-spacing:-.015em;
+    text-wrap:balance;
+    margin:0;
+  }
+  p{text-wrap:pretty;hyphens:auto;margin:0 0 1em}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- TOP NAV ---------- */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px clamp(20px,4vw,48px);
+    background:color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter:saturate(140%) blur(6px);
+    border-bottom:var(--rule);
+    font-family:var(--sans);
+    font-size:14px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+  }
+  .nav__brand{font-family:var(--serif); font-size:22px; letter-spacing:0; text-transform:none}
+  .nav__brand em{font-style:italic; color:var(--crimson)}
+  .nav__links{display:flex; gap:clamp(14px,2vw,32px); flex-wrap:wrap}
+  .nav__links a{position:relative; padding:4px 0}
+  .nav__links a::after{
+    content:""; position:absolute; inset:auto 0 -2px 0; height:1px;
+    background:var(--crimson); transform:scaleX(0); transform-origin:0 50%;
+    transition:transform .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .nav__links a:hover::after{transform:scaleX(1)}
+  .nav__phone{font-family:var(--serif); font-size:18px; letter-spacing:0; text-transform:none; color:var(--crimson)}
+  @media (max-width:780px){
+    .nav{flex-wrap:wrap; gap:8px 16px; padding:12px 18px}
+    .nav__links{order:3; flex-basis:100%; gap:14px; font-size:12px}
+    .nav__phone{font-size:15px}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+    gap:clamp(20px,4vw,64px);
+    padding:clamp(40px,7vw,96px) clamp(20px,4vw,64px) clamp(60px,8vw,120px);
+    min-height:88vh;
+    overflow:hidden;
+  }
+  .hero__mark{
+    font-family:var(--cn);
+    font-weight:900;
+    color:var(--crimson);
+    font-size:clamp(11rem,32vw,28rem);
+    line-height:.78;
+    letter-spacing:-.04em;
+    align-self:end;
+    margin-left:-.04em;
+    user-select:none;
+  }
+  .hero__mark span{
+    display:block;
+    font-size:.42em;
+    color:var(--amber);
+    font-weight:400;
+    margin-top:.1em;
+    letter-spacing:.05em;
+  }
+  .hero__right{
+    align-self:end;
+    display:flex; flex-direction:column; gap:clamp(18px,2.4vw,32px);
+    padding-bottom:.5em;
+  }
+  .kicker{
+    font-family:var(--sans);
+    font-size:12px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--crimson-deep);
+    display:inline-flex; align-items:center; gap:10px;
+  }
+  .kicker::before{content:""; width:28px; height:1px; background:var(--crimson-deep)}
+  .hero h1{
+    font-size:clamp(2.8rem,7vw + .6rem,7.4rem);
+    display:flex; flex-direction:column; gap:.18em;
+  }
+  .hero h1 em{font-style:italic; color:var(--crimson)}
+  .hero__brandline{
+    font-family:var(--sans); font-weight:500;
+    font-size:.18em; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--crimson-deep);
+    line-height:1;
+  }
+  .hero__brandline em{font-style:normal; color:var(--crimson)}
+  .hero__copy{
+    max-width:38ch;
+    font-size:clamp(15px,.5vw + 13.5px,18px);
+    line-height:1.55;
+    color:color-mix(in srgb, var(--ink) 84%, transparent);
+  }
+  .hero__cta{
+    display:flex; flex-wrap:wrap; gap:14px; align-items:center;
+    margin-top:6px;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:14px 22px;
+    font-family:var(--sans); font-size:13px; letter-spacing:.16em; text-transform:uppercase;
+    font-weight:500;
+    border:1px solid var(--ink);
+    background:var(--ink); color:var(--cream);
+    transition:background .25s ease, color .25s ease, transform .25s ease;
+  }
+  .btn:hover{background:var(--crimson); border-color:var(--crimson); color:var(--cream)}
+  .btn--ghost{background:transparent; color:var(--ink)}
+  .btn--ghost:hover{background:var(--ink); color:var(--cream)}
+  .btn__arrow{transition:transform .25s ease}
+  .btn:hover .btn__arrow{transform:translateX(4px)}
+  .hero__meta{
+    display:flex; gap:clamp(18px,3vw,42px); flex-wrap:wrap;
+    padding-top:clamp(14px,2vw,22px);
+    border-top:var(--rule);
+    font-size:13px; letter-spacing:.04em;
+  }
+  .hero__meta dt{font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--crimson-deep); margin-bottom:4px}
+  .hero__meta dd{margin:0; font-family:var(--serif); font-size:18px; letter-spacing:0}
+  @media (max-width:780px){
+    .hero{grid-template-columns:1fr; min-height:auto; padding-top:32px; gap:8px}
+    .hero__mark{font-size:42vw; margin-left:-.06em; line-height:.8}
+    .hero__right{padding-bottom:0}
+  }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee{
+    overflow:hidden;
+    background:var(--crimson);
+    color:var(--cream);
+    border-top:1px solid var(--crimson-deep);
+    border-bottom:1px solid var(--crimson-deep);
+    padding:18px 0;
+    --speed:55s;
+  }
+  .marquee__track{
+    display:inline-flex; gap:3.5rem; white-space:nowrap;
+    animation:scroll var(--speed) linear infinite;
+    will-change:transform;
+    font-family:var(--serif);
+    font-size:clamp(1.5rem,3.5vw,2.6rem);
+    line-height:1;
+  }
+  .marquee__track span{display:inline-flex; align-items:center; gap:3.5rem}
+  .marquee__track span::after{
+    content:"·"; color:var(--amber); font-size:.9em;
+  }
+  @keyframes scroll{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.marquee__track{animation:none}}
+
+  /* ---------- SECTION SHELL ---------- */
+  .slab{
+    padding:clamp(60px,8vw,120px) clamp(20px,4vw,64px);
+    position:relative;
+  }
+  .slab--cream{background:var(--cream-soft)}
+  .slab--paper{background:var(--paper)}
+  .slab--crimson{background:var(--crimson); color:var(--cream)}
+  .slab--crimson .kicker{color:var(--cream)}
+  .slab--crimson .kicker::before{background:var(--cream)}
+  .slab--ink{background:var(--ink); color:var(--cream)}
+  .slab--ink .kicker{color:var(--amber)}
+  .slab--ink .kicker::before{background:var(--amber)}
+
+  .grid{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);
+    gap:clamp(28px,5vw,80px);
+    max-width:1280px;
+    margin:0 auto;
+  }
+  .grid--reverse{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+  .grid h2{font-size:clamp(2.4rem,5vw,4.6rem)}
+  .grid h2 em{font-style:italic; color:var(--crimson)}
+  .slab--crimson .grid h2 em, .slab--ink .grid h2 em{color:var(--amber)}
+  @media (max-width:780px){.grid,.grid--reverse{grid-template-columns:1fr}}
+
+  .lede{font-size:clamp(17px,.6vw + 14px,21px); line-height:1.5; max-width:54ch}
+
+  /* ---------- ABOUT pull-quote ---------- */
+  .pull{
+    font-family:var(--serif); font-style:italic;
+    font-size:clamp(1.6rem,3vw,2.6rem);
+    line-height:1.15;
+    padding-left:clamp(18px,2vw,32px);
+    border-left:3px solid var(--amber);
+    color:var(--ink);
+    max-width:36ch;
+  }
+  .slab--crimson .pull, .slab--ink .pull{color:var(--cream)}
+
+  /* ---------- MENU broadsheet ---------- */
+  .menu{
+    max-width:1100px; margin:0 auto;
+    display:grid; gap:clamp(40px,5vw,72px);
+  }
+  .menu__head{text-align:center; max-width:60ch; margin:0 auto}
+  .menu__head h2{font-size:clamp(2.6rem,6vw,5.4rem)}
+  .menu__head h2 em{font-style:italic; color:var(--crimson)}
+  .menu__cols{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:clamp(40px,5vw,80px);
+  }
+  .menu__col h3{
+    font-size:clamp(1.5rem,2vw + .8rem,2.4rem);
+    color:var(--crimson);
+    padding-bottom:14px;
+    border-bottom:1px solid color-mix(in srgb, var(--crimson) 40%, transparent);
+    margin-bottom:18px;
+  }
+  .menu__col h3 .cn{
+    font-family:var(--cn); font-weight:700; font-size:.65em;
+    color:var(--ink); opacity:.55; margin-left:.4em; letter-spacing:.04em;
+  }
+  .menu__list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:14px}
+  .menu__list li{
+    display:grid; grid-template-columns:1fr auto;
+    gap:10px; align-items:baseline;
+    padding-bottom:12px;
+    border-bottom:1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
+    font-size:15px;
+  }
+  .menu__list li:last-child{border-bottom:0}
+  .menu__name{font-family:var(--serif); font-size:17px; line-height:1.2}
+  .menu__name .heat{color:var(--crimson); font-family:var(--sans); font-size:11px; letter-spacing:.1em; margin-left:6px; vertical-align:1px}
+  .menu__note{
+    grid-column:1/-1;
+    font-size:13px; opacity:.7;
+    margin-top:2px;
+    line-height:1.4;
+  }
+  .menu__foot{
+    text-align:center;
+    font-size:13px; letter-spacing:.14em; text-transform:uppercase;
+    color:color-mix(in srgb, var(--ink) 70%, transparent);
+  }
+  .menu__foot strong{font-family:var(--serif); font-style:italic; text-transform:none; letter-spacing:0; color:var(--crimson); font-weight:400; font-size:18px}
+
+  /* ---------- GALLERY ---------- */
+  .gallery{
+    max-width:1280px; margin:0 auto;
+    display:grid; gap:clamp(20px,3vw,40px);
+  }
+  .gallery__head{display:flex; justify-content:space-between; align-items:end; flex-wrap:wrap; gap:20px}
+  .gallery__head h2{font-size:clamp(2.4rem,5vw,4.4rem)}
+  .gallery__grid{
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    gap:clamp(12px,1.5vw,20px);
+  }
+  .tile{
+    border:1px dashed color-mix(in srgb, var(--cream) 55%, transparent);
+    background:
+      repeating-linear-gradient(135deg,
+        transparent 0 22px,
+        color-mix(in srgb, var(--cream) 12%, transparent) 22px 23px);
+    aspect-ratio:4/3;
+    display:flex; align-items:center; justify-content:center;
+    padding:24px; text-align:center;
+    font-family:var(--serif); font-style:italic;
+    color:color-mix(in srgb, var(--cream) 75%, transparent);
+    font-size:clamp(15px,1.2vw,18px);
+    line-height:1.3;
+  }
+  .tile--lg{grid-column:span 8; aspect-ratio:16/10}
+  .tile--md{grid-column:span 4}
+  .tile--sm{grid-column:span 4}
+  .tile--wide{grid-column:span 6}
+  @media (max-width:780px){
+    .tile,.tile--lg,.tile--md,.tile--sm,.tile--wide{grid-column:span 12; aspect-ratio:5/4}
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact{
+    max-width:1280px; margin:0 auto;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);
+    gap:clamp(30px,4vw,60px);
+    align-items:start;
+  }
+  .contact h2{font-size:clamp(2.6rem,5vw,4.8rem); margin-bottom:24px}
+  .contact h2 em{font-style:italic; color:var(--amber)}
+  .info-grid{
+    display:grid; gap:22px;
+    font-size:15px; line-height:1.5;
+  }
+  .info-grid dt{
+    font-size:11px; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--amber);
+    margin-bottom:6px;
+  }
+  .info-grid dd{margin:0; font-family:var(--serif); font-size:clamp(20px,1.6vw,26px); line-height:1.2}
+  .info-grid dd a:hover{color:var(--amber)}
+  .info-grid .small{font-family:var(--sans); font-size:14px; line-height:1.5; opacity:.85}
+  .map-wrap{
+    aspect-ratio:4/3;
+    border:1px solid color-mix(in srgb, var(--cream) 25%, transparent);
+    background:var(--ink);
+    overflow:hidden;
+  }
+  .map-wrap iframe{width:100%; height:100%; border:0; filter:grayscale(.3) contrast(1.05)}
+  @media (max-width:780px){.contact{grid-template-columns:1fr}}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--ink); color:var(--cream);
+    padding:clamp(40px,5vw,72px) clamp(20px,4vw,64px) 32px;
+    border-top:4px solid var(--crimson);
+  }
+  .foot{
+    max-width:1280px; margin:0 auto;
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:clamp(24px,3vw,48px);
+    padding-bottom:32px;
+    border-bottom:1px solid color-mix(in srgb, var(--cream) 18%, transparent);
+  }
+  .foot h3{
+    font-size:11px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--amber); font-family:var(--sans); font-weight:500;
+    margin-bottom:14px;
+  }
+  .foot p, .foot a{font-family:var(--serif); font-size:18px; line-height:1.4; display:block; margin:0 0 6px}
+  .foot a:hover{color:var(--amber)}
+  .foot__brand{font-family:var(--cn); font-weight:900; font-size:64px; color:var(--crimson); line-height:.85; letter-spacing:-.03em}
+  .foot__brand small{display:block; font-family:var(--serif); font-size:18px; color:var(--cream); margin-top:8px; letter-spacing:.05em}
+  .foot__legal{
+    max-width:1280px; margin:24px auto 0;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+    font-size:12px; letter-spacing:.06em; opacity:.7;
+  }
+
+  /* ---------- REVEALS ---------- */
+  @supports (animation-timeline:view()){
+    .reveal{
+      animation:rise both;
+      animation-timeline:view();
+      animation-range:entry 0% cover 28%;
+    }
+    @keyframes rise{
+      from{opacity:0; transform:translateY(1.6rem)}
+      to{opacity:1; transform:translateY(0)}
+    }
+  }
+  @media (prefers-reduced-motion:reduce){
+    .reveal{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Primary">
+  <a href="#home" class="nav__brand">@72<em>.</em>china</a>
+  <div class="nav__links">
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="nav__phone" href="tel:+441223956875">01223&nbsp;956875</a>
+</nav>
+
+<!-- ============ HERO / HOME ============ -->
+<section class="hero" id="home">
+  <div class="hero__mark" aria-hidden="true">
+    七十二
+    <span>Regent St · CB2</span>
+  </div>
+  <div class="hero__right">
+    <span class="kicker">Sichuan &amp; Cantonese · Cambridge</span>
+    <h1>
+      <span class="hero__brandline">@72<em>.</em>China · Regent Street</span>
+      <span>Numbing heat, perfectly <em>balanced</em>.</span>
+    </h1>
+    <p class="hero__copy">
+      A proper Sichuan and Cantonese kitchen on Regent Street — chilli oil, fermented bean,
+      the slow burn of <em>málà</em>, alongside the wok-fire classics from the south.
+      Dine in, takeaway, or have us sent over.
+    </p>
+    <div class="hero__cta">
+      <a href="tel:+441223956875" class="btn">
+        Book a table <span class="btn__arrow">→</span>
+      </a>
+      <a href="#menu" class="btn btn--ghost">See the menu</a>
+    </div>
+    <dl class="hero__meta">
+      <div><dt>Open</dt><dd>11:30 – 22:30, daily</dd></div>
+      <div><dt>Find us</dt><dd>72 Regent Street, CB2 1DP</dd></div>
+      <div><dt>Call</dt><dd><a href="tel:+441223956875">01223 956875</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Salt &amp; Pepper Squid</span>
+    <span>Mapo Tofu</span>
+    <span>Sizzling Aubergine</span>
+    <span>Hot &amp; Sour Soup</span>
+    <span>Poached Chicken, Sichuan Chilli Oil</span>
+    <span>Double-Cooked Pork</span>
+    <span>Salt &amp; Pepper Squid</span>
+    <span>Mapo Tofu</span>
+    <span>Sizzling Aubergine</span>
+    <span>Hot &amp; Sour Soup</span>
+    <span>Poached Chicken, Sichuan Chilli Oil</span>
+    <span>Double-Cooked Pork</span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="slab slab--cream" id="about">
+  <div class="grid">
+    <div class="reveal">
+      <span class="kicker">About the kitchen</span>
+      <h2>Real Sichuan, on <em>Regent Street</em>.</h2>
+    </div>
+    <div class="reveal">
+      <p class="lede">
+        @72.China sits a few doors south of Downing Street, between Lensfield Road and the Catholic Church.
+        We came to Cambridge with a single ambition — to cook Sichuan food the way it is cooked at home in
+        Chengdu: numbing, fragrant, deeply layered, never timid. Alongside it we keep a careful Cantonese
+        line — clean wok-fire, salt &amp; pepper, sweet vinegar — for the dishes our guests have loved here for years.
+      </p>
+      <p class="pull">
+        “If you've never had real málà — the cool buzz of Sichuan peppercorn behind the chilli — let this be where you try it.”
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section class="slab slab--paper" id="menu">
+  <div class="menu">
+    <header class="menu__head reveal">
+      <span class="kicker">A selection</span>
+      <h2>From the <em>kitchen</em></h2>
+      <p class="lede" style="margin:18px auto 0">
+        A reading of the menu — not the whole of it. Two hundred-odd dishes wait for you in the room.
+        Ask for the daily specials, and tell us how hot you'd like it.
+      </p>
+    </header>
+
+    <div class="menu__cols reveal">
+      <div class="menu__col">
+        <h3>Sichuan classics <span class="cn">川菜</span></h3>
+        <ul class="menu__list">
+          <li><span class="menu__name">Mapo Tofu <span class="heat">MÁLÀ</span></span></li>
+          <li><span class="menu__name">Poached Chicken, Sichuan Chilli Oil <span class="heat">SPICY</span></span></li>
+          <li><span class="menu__name">Sizzling Aubergine in Garlic Sauce</span></li>
+          <li><span class="menu__name">Double-Cooked Sliced Pork <span class="heat">SPICY</span></span></li>
+          <li><span class="menu__name">Dry-Fried Green Beans, Minced Pork</span></li>
+          <li><span class="menu__name">Cumin Lamb, Sichuan Style <span class="heat">MÁLÀ</span></span></li>
+        </ul>
+      </div>
+
+      <div class="menu__col">
+        <h3>Cantonese &amp; wok <span class="cn">粤菜</span></h3>
+        <ul class="menu__list">
+          <li><span class="menu__name">Salt &amp; Pepper Squid</span></li>
+          <li><span class="menu__name">Sweet &amp; Sour Pork, Hong Kong Style</span></li>
+          <li><span class="menu__name">Crispy Aromatic Duck</span></li>
+          <li><span class="menu__name">Beef &amp; Black Bean</span></li>
+          <li><span class="menu__name">Stir-Fried Chinese Greens, Garlic</span></li>
+          <li><span class="menu__name">King Prawn, Ginger &amp; Spring Onion</span></li>
+        </ul>
+      </div>
+
+      <div class="menu__col">
+        <h3>Soups &amp; small <span class="cn">小菜</span></h3>
+        <ul class="menu__list">
+          <li><span class="menu__name">Hot &amp; Sour Soup <span class="heat">SPICY</span></span></li>
+          <li><span class="menu__name">Wonton Soup</span></li>
+          <li><span class="menu__name">Sweetcorn &amp; Chicken Soup</span></li>
+          <li><span class="menu__name">Steamed Pork Dumplings</span></li>
+          <li><span class="menu__name">Crispy Seaweed</span></li>
+          <li><span class="menu__name">Sichuan Pickled Vegetables</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="menu__foot reveal">
+      Full menu in the restaurant · over <strong>two hundred dishes</strong> · ask for daily specials
+    </p>
+  </div>
+</section>
+
+<!-- ============ SERVICES BAND ============ -->
+<section class="slab slab--crimson">
+  <div class="grid grid--reverse">
+    <div class="reveal">
+      <span class="kicker">How to eat with us</span>
+      <h2>Dine in. <em>Takeaway.</em> Delivered.</h2>
+    </div>
+    <div class="reveal">
+      <p class="lede">
+        Tables for two, tables for ten. Reservations welcome — call us, particularly on a Friday and Saturday.
+        We pack a tight takeaway: phone ahead, twenty minutes, ready to go from the counter.
+        And we're on Deliveroo across central Cambridge if you'd rather we came to you.
+      </p>
+      <div class="hero__cta" style="margin-top:18px">
+        <a href="tel:+441223956875" class="btn" style="background:var(--cream); color:var(--ink); border-color:var(--cream)">
+          Call to reserve <span class="btn__arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="slab slab--ink" id="gallery">
+  <div class="gallery">
+    <header class="gallery__head reveal">
+      <div>
+        <span class="kicker">The room &amp; the food</span>
+        <h2>A few <em style="font-style:italic;color:var(--amber)">photographs</em></h2>
+      </div>
+      <p style="max-width:36ch; opacity:.85">
+        Photographs of the kitchen, the room, the dishes — to be added shortly.
+        Pop in for the real thing in the meantime.
+      </p>
+    </header>
+    <div class="gallery__grid reveal">
+      <div class="tile tile--lg">Dining room · evening</div>
+      <div class="tile tile--md">Mapo tofu</div>
+      <div class="tile tile--sm">Salt &amp; pepper squid</div>
+      <div class="tile tile--sm">Crispy duck</div>
+      <div class="tile tile--wide">The wok line</div>
+      <div class="tile tile--md">Sichuan peppercorn</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="slab slab--ink" id="contact" style="padding-top:0">
+  <div class="contact">
+    <div class="reveal">
+      <span class="kicker">Find us</span>
+      <h2>72 Regent Street, <em>CB2 1DP</em></h2>
+      <dl class="info-grid">
+        <div>
+          <dt>Call</dt>
+          <dd><a href="tel:+441223956875">01223 956875</a></dd>
+        </div>
+        <div>
+          <dt>Address</dt>
+          <dd>72 Regent Street<br>Cambridge<br>CB2 1DP</dd>
+        </div>
+        <div>
+          <dt>Open</dt>
+          <dd>Monday – Sunday<br>11:30 – 22:30</dd>
+          <dd class="small">Last orders 22:00 · Bank holiday hours may vary</dd>
+        </div>
+        <div>
+          <dt>How we serve</dt>
+          <dd class="small">
+            Dine in · Takeaway · Delivery via Deliveroo (central Cambridge) ·
+            Reservations welcome
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <div class="reveal">
+      <div class="map-wrap">
+        <iframe
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map to 72 Regent Street, Cambridge CB2 1DP"
+          src="https://www.google.com/maps?q=72+Regent+Street,+Cambridge+CB2+1DP&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot">
+    <div>
+      <div class="foot__brand">七十二<small>@72.china · Regent St</small></div>
+    </div>
+    <div>
+      <h3>Visit</h3>
+      <p>72 Regent Street<br>Cambridge<br>CB2 1DP</p>
+    </div>
+    <div>
+      <h3>Reserve</h3>
+      <a href="tel:+441223956875">01223 956875</a>
+      <a href="#menu">View menu</a>
+    </div>
+    <div>
+      <h3>Open</h3>
+      <p>Mon – Sun<br>11:30 – 22:30</p>
+    </div>
+  </div>
+  <div class="foot__legal">
+    <span>© @72.China, Cambridge</span>
+    <span>Sichuan &amp; Cantonese · est. on Regent Street</span>
+  </div>
+</footer>
+
+</body>
+</html>
