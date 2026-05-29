@@ -3,656 +3,821 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>@72.China — Sichuan &amp; Cantonese, Regent Street, Cambridge</title>
-<meta name="description" content="Authentic Sichuan and Cantonese cooking on Regent Street, Cambridge. Mapo tofu, hot &amp; sour soup, salt &amp; pepper squid. Dine in, takeaway, delivery.">
+<title>@72 China · Sichuan on Regent Street · Cambridge CB2 1DP</title>
+<meta name="description" content="@72 China — authentic Sichuan cuisine at 72 Regent Street, Cambridge CB2 1DP. Dan dan noodles, fish in boiling chilli oil, dry pot, cross-bridge rice noodles. Open 12pm–10:30pm.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:opsz,ital,wght@6..72,0,400;6..72,0,600;6..72,1,400&family=Noto+Serif+SC:wght@500;700;900&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --ink:#1A0F0E;
-    --crimson:#8B3A3A;
-    --crimson-deep:#6A2828;
-    --cream:#F4E4BC;
-    --cream-soft:#FAF0D6;
-    --amber:#D6863A;
-    --paper:#FCF6E7;
-    --serif:"DM Serif Display", "Noto Serif SC", Georgia, serif;
-    --sans:"DM Sans", system-ui, sans-serif;
-    --cn:"Noto Serif SC", "DM Serif Display", serif;
-    --rule:1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+    --ink:        #0E0807;
+    --paper:      #F3EBDC;
+    --paper-warm: #ECDFC8;
+    --cinnabar:   #C0341A;
+    --amber:      #E89A2D;
+    --peppercorn: #5E6E3E;
+    --rule:       #3A2A22;
+
+    --display: "Bricolage Grotesque", Georgia, serif;
+    --body:    "Newsreader", "Iowan Old Style", Georgia, serif;
+    --han:     "Noto Serif SC", "Songti SC", "STSong", serif;
+
+    --measure: 62ch;
+    --gutter: clamp(1.1rem, 2.2vw, 2rem);
+    --rhythm: clamp(1rem, .6rem + .6vw, 1.18rem);
   }
 
-  *,*::before,*::after{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  *{box-sizing:border-box}
+  html{ scroll-behavior:smooth }
   body{
     margin:0;
-    font-family:var(--sans);
-    font-size:clamp(15px,.6vw + 13px,17px);
-    line-height:1.55;
-    color:var(--ink);
     background:var(--paper);
-    text-rendering:optimizeLegibility;
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:var(--rhythm);
+    line-height:1.55;
+    text-wrap:pretty;
+    hyphens:auto;
     -webkit-font-smoothing:antialiased;
   }
   body::before{
     content:"";
     position:fixed; inset:0;
-    background-image:radial-gradient(circle at 1px 1px, rgba(26,15,14,.05) 1px, transparent 0);
-    background-size:3px 3px;
     pointer-events:none;
-    z-index:1;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.05  0 0 0 0 0.03  0 0 0 0 0.02  0 0 0 0.4 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity:.35;
     mix-blend-mode:multiply;
+    z-index:1;
   }
-  h1,h2,h3{
-    font-family:var(--serif);
-    font-weight:400;
-    line-height:.95;
-    letter-spacing:-.015em;
-    text-wrap:balance;
+  main, header, footer{ position:relative; z-index:2 }
+
+  a{ color:inherit; text-decoration:none }
+  a.link{
+    border-bottom:1px solid currentColor;
+    padding-bottom:1px;
+    transition:color .2s, border-color .2s;
+  }
+  a.link:hover{ color:var(--cinnabar); border-color:var(--cinnabar) }
+  h1,h2,h3{ text-wrap:balance; margin:0 }
+  ::selection{ background:var(--cinnabar); color:var(--paper) }
+
+  .wrap{ padding-inline: var(--gutter) }
+
+  /* TOPBAR */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 1.1rem var(--gutter);
+    border-bottom:1px solid var(--rule);
+    font-family:var(--display);
+    font-weight:600;
+    font-size:.78rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+  .topbar .han{ font-family:var(--han); font-weight:700; letter-spacing:.04em; text-transform:none; font-size:.95rem }
+  .topbar .right a + a{ margin-left:1.3rem }
+  .open-pill{
+    display:inline-flex; align-items:center; gap:.55rem;
+    color:var(--peppercorn);
+    margin-left:1.3rem;
+  }
+  .open-pill::before{
+    content:""; width:.55rem; height:.55rem; border-radius:999px;
+    background:var(--peppercorn);
+    box-shadow:0 0 0 4px color-mix(in srgb, var(--peppercorn) 22%, transparent);
+  }
+
+  /* HERO */
+  .hero{
+    padding: clamp(2rem,4vw,3.5rem) var(--gutter) clamp(1.5rem,3vw,2.5rem);
+    border-bottom:1px solid var(--rule);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1rem,2vw,1.6rem);
+  }
+  .mark{
+    font-family:var(--display);
+    font-weight:800;
+    font-variation-settings:"opsz" 96;
+    font-size: clamp(4.5rem, 18vw, 14rem);
+    line-height:.82;
+    letter-spacing:-.045em;
+    color:var(--ink);
+  }
+  .mark .at{
+    color:var(--cinnabar);
+    font-style:italic;
+    font-weight:800;
+    margin-right:.02em;
+    display:inline-block;
+    transform:translateY(.04em);
+  }
+  .mark .dot{ color:var(--cinnabar) }
+  .mark .china{
+    display:block;
+    color:var(--ink);
+  }
+  .hero-sub{
+    display:flex; flex-wrap:wrap; align-items:flex-end; gap:1rem 2rem;
+    border-top:1px solid var(--rule);
+    padding-top:1.2rem;
+    margin-top:.4rem;
+  }
+  .han-tag{
+    font-family:var(--han); font-weight:700;
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    line-height:1;
+    color:var(--ink);
+    letter-spacing:.06em;
+  }
+  .han-tag .sep{ color:var(--cinnabar); margin:0 .15em }
+  .lede{
+    font-family:var(--body);
+    font-size: clamp(1.05rem, 1.2vw + .8rem, 1.35rem);
+    max-width:34ch;
+    line-height:1.4;
     margin:0;
   }
-  p{text-wrap:pretty;hyphens:auto;margin:0 0 1em}
-  a{color:inherit;text-decoration:none}
+  .lede em{ font-style:italic; color:var(--cinnabar) }
 
-  /* ---------- TOP NAV ---------- */
-  .nav{
-    position:sticky; top:0; z-index:50;
-    display:flex; align-items:center; justify-content:space-between;
-    padding:14px clamp(20px,4vw,48px);
-    background:color-mix(in srgb, var(--paper) 88%, transparent);
-    backdrop-filter:saturate(140%) blur(6px);
-    border-bottom:var(--rule);
-    font-family:var(--sans);
-    font-size:14px;
-    letter-spacing:.06em;
-    text-transform:uppercase;
-  }
-  .nav__brand{font-family:var(--serif); font-size:22px; letter-spacing:0; text-transform:none}
-  .nav__brand em{font-style:italic; color:var(--crimson)}
-  .nav__links{display:flex; gap:clamp(14px,2vw,32px); flex-wrap:wrap}
-  .nav__links a{position:relative; padding:4px 0}
-  .nav__links a::after{
-    content:""; position:absolute; inset:auto 0 -2px 0; height:1px;
-    background:var(--crimson); transform:scaleX(0); transform-origin:0 50%;
-    transition:transform .35s cubic-bezier(.2,.7,.2,1);
-  }
-  .nav__links a:hover::after{transform:scaleX(1)}
-  .nav__phone{font-family:var(--serif); font-size:18px; letter-spacing:0; text-transform:none; color:var(--crimson)}
-  @media (max-width:780px){
-    .nav{flex-wrap:wrap; gap:8px 16px; padding:12px 18px}
-    .nav__links{order:3; flex-basis:100%; gap:14px; font-size:12px}
-    .nav__phone{font-size:15px}
-  }
-
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;
+  .meta-row{
     display:grid;
-    grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
-    gap:clamp(20px,4vw,64px);
-    padding:clamp(40px,7vw,96px) clamp(20px,4vw,64px) clamp(60px,8vw,120px);
-    min-height:88vh;
-    overflow:hidden;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 1.2rem 2rem;
+    margin: clamp(1.6rem, 3vw, 2.6rem) 0 0;
+    padding:0;
+    font-family:var(--display);
+    font-size:.86rem;
+    letter-spacing:.04em;
   }
-  .hero__mark{
-    font-family:var(--cn);
-    font-weight:900;
-    color:var(--crimson);
-    font-size:clamp(11rem,32vw,28rem);
-    line-height:.78;
-    letter-spacing:-.04em;
-    align-self:end;
-    margin-left:-.04em;
-    user-select:none;
+  .meta-row dt{
+    text-transform:uppercase; font-weight:600;
+    font-size:.7rem; letter-spacing:.18em;
+    color:var(--rule);
+    margin-bottom:.25rem;
   }
-  .hero__mark span{
-    display:block;
-    font-size:.42em;
-    color:var(--amber);
-    font-weight:400;
-    margin-top:.1em;
-    letter-spacing:.05em;
-  }
-  .hero__right{
-    align-self:end;
-    display:flex; flex-direction:column; gap:clamp(18px,2.4vw,32px);
-    padding-bottom:.5em;
-  }
-  .kicker{
-    font-family:var(--sans);
-    font-size:12px;
-    letter-spacing:.22em;
-    text-transform:uppercase;
-    color:var(--crimson-deep);
-    display:inline-flex; align-items:center; gap:10px;
-  }
-  .kicker::before{content:""; width:28px; height:1px; background:var(--crimson-deep)}
-  .hero h1{
-    font-size:clamp(2.8rem,7vw + .6rem,7.4rem);
-    display:flex; flex-direction:column; gap:.18em;
-  }
-  .hero h1 em{font-style:italic; color:var(--crimson)}
-  .hero__brandline{
-    font-family:var(--sans); font-weight:500;
-    font-size:.18em; letter-spacing:.22em; text-transform:uppercase;
-    color:var(--crimson-deep);
-    line-height:1;
-  }
-  .hero__brandline em{font-style:normal; color:var(--crimson)}
-  .hero__copy{
-    max-width:38ch;
-    font-size:clamp(15px,.5vw + 13.5px,18px);
-    line-height:1.55;
-    color:color-mix(in srgb, var(--ink) 84%, transparent);
-  }
-  .hero__cta{
-    display:flex; flex-wrap:wrap; gap:14px; align-items:center;
-    margin-top:6px;
-  }
-  .btn{
-    display:inline-flex; align-items:center; gap:10px;
-    padding:14px 22px;
-    font-family:var(--sans); font-size:13px; letter-spacing:.16em; text-transform:uppercase;
-    font-weight:500;
-    border:1px solid var(--ink);
-    background:var(--ink); color:var(--cream);
-    transition:background .25s ease, color .25s ease, transform .25s ease;
-  }
-  .btn:hover{background:var(--crimson); border-color:var(--crimson); color:var(--cream)}
-  .btn--ghost{background:transparent; color:var(--ink)}
-  .btn--ghost:hover{background:var(--ink); color:var(--cream)}
-  .btn__arrow{transition:transform .25s ease}
-  .btn:hover .btn__arrow{transform:translateX(4px)}
-  .hero__meta{
-    display:flex; gap:clamp(18px,3vw,42px); flex-wrap:wrap;
-    padding-top:clamp(14px,2vw,22px);
-    border-top:var(--rule);
-    font-size:13px; letter-spacing:.04em;
-  }
-  .hero__meta dt{font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--crimson-deep); margin-bottom:4px}
-  .hero__meta dd{margin:0; font-family:var(--serif); font-size:18px; letter-spacing:0}
-  @media (max-width:780px){
-    .hero{grid-template-columns:1fr; min-height:auto; padding-top:32px; gap:8px}
-    .hero__mark{font-size:42vw; margin-left:-.06em; line-height:.8}
-    .hero__right{padding-bottom:0}
-  }
+  .meta-row dd{ margin:0; font-weight:600; font-size:1.05rem }
 
-  /* ---------- MARQUEE ---------- */
+  /* MARQUEE */
   .marquee{
     overflow:hidden;
-    background:var(--crimson);
-    color:var(--cream);
-    border-top:1px solid var(--crimson-deep);
-    border-bottom:1px solid var(--crimson-deep);
-    padding:18px 0;
-    --speed:55s;
+    background:var(--ink); color:var(--paper);
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    --speed: 48s;
   }
   .marquee__track{
-    display:inline-flex; gap:3.5rem; white-space:nowrap;
-    animation:scroll var(--speed) linear infinite;
-    will-change:transform;
-    font-family:var(--serif);
-    font-size:clamp(1.5rem,3.5vw,2.6rem);
+    display:flex; gap:3rem;
+    white-space:nowrap;
+    animation: scroll var(--speed) linear infinite;
+    padding: .9rem 0;
+    width:max-content;
+  }
+  .marquee__track span.item{
+    font-family:var(--display);
+    font-weight:600;
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    letter-spacing:-.005em;
+    display:inline-flex; gap:.7rem; align-items:baseline;
+  }
+  .marquee__track .han{ font-family:var(--han); font-weight:700; color:var(--amber); font-style:normal }
+  .marquee__track .sep{
+    display:inline-block; width:.45rem; height:.45rem; border-radius:999px;
+    background:var(--cinnabar); transform:translateY(-.25em);
+    margin:0 .2rem;
+    align-self:center;
+  }
+  @keyframes scroll{ to{ transform:translateX(-50%) } }
+  @media (prefers-reduced-motion: reduce){
+    .marquee__track{ animation:none; transform:none }
+  }
+
+  /* SECTIONS */
+  section{ padding-block: clamp(3rem,6vw,5rem) }
+  .section-head{
+    display:grid;
+    grid-template-columns: auto 1fr;
+    align-items:baseline;
+    gap:1.2rem;
+    margin-bottom: clamp(1.6rem, 3vw, 2.6rem);
+    border-bottom:1px solid var(--rule);
+    padding-bottom:.8rem;
+  }
+  .section-num{
+    font-family:var(--display); font-weight:800;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
     line-height:1;
+    color:var(--cinnabar);
+    font-variation-settings:"opsz" 48;
   }
-  .marquee__track span{display:inline-flex; align-items:center; gap:3.5rem}
-  .marquee__track span::after{
-    content:"·"; color:var(--amber); font-size:.9em;
+  .section-title{
+    font-family:var(--display); font-weight:800;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    line-height:1;
+    letter-spacing:-.025em;
   }
-  @keyframes scroll{to{transform:translateX(-50%)}}
-  @media (prefers-reduced-motion:reduce){.marquee__track{animation:none}}
+  .section-title .han{
+    font-family:var(--han); font-weight:700; color:var(--peppercorn);
+    margin-left:.5rem; font-size:.8em;
+  }
 
-  /* ---------- SECTION SHELL ---------- */
+  /* HEAT SLAB */
   .slab{
-    padding:clamp(60px,8vw,120px) clamp(20px,4vw,64px);
-    position:relative;
+    background:var(--cinnabar);
+    color:var(--paper);
+    margin-top: 0;
+    border-bottom:1px solid var(--ink);
   }
-  .slab--cream{background:var(--cream-soft)}
-  .slab--paper{background:var(--paper)}
-  .slab--crimson{background:var(--crimson); color:var(--cream)}
-  .slab--crimson .kicker{color:var(--cream)}
-  .slab--crimson .kicker::before{background:var(--cream)}
-  .slab--ink{background:var(--ink); color:var(--cream)}
-  .slab--ink .kicker{color:var(--amber)}
-  .slab--ink .kicker::before{background:var(--amber)}
+  .slab .section-num{ color:var(--paper) }
+  .slab .section-head{ border-bottom-color: color-mix(in srgb, var(--paper) 30%, transparent) }
+  .slab .section-title .han{ color:var(--amber) }
 
-  .grid{
+  .heat-grid{
     display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);
-    gap:clamp(28px,5vw,80px);
-    max-width:1280px;
-    margin:0 auto;
-  }
-  .grid--reverse{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
-  .grid h2{font-size:clamp(2.4rem,5vw,4.6rem)}
-  .grid h2 em{font-style:italic; color:var(--crimson)}
-  .slab--crimson .grid h2 em, .slab--ink .grid h2 em{color:var(--amber)}
-  @media (max-width:780px){.grid,.grid--reverse{grid-template-columns:1fr}}
-
-  .lede{font-size:clamp(17px,.6vw + 14px,21px); line-height:1.5; max-width:54ch}
-
-  /* ---------- ABOUT pull-quote ---------- */
-  .pull{
-    font-family:var(--serif); font-style:italic;
-    font-size:clamp(1.6rem,3vw,2.6rem);
-    line-height:1.15;
-    padding-left:clamp(18px,2vw,32px);
-    border-left:3px solid var(--amber);
-    color:var(--ink);
-    max-width:36ch;
-  }
-  .slab--crimson .pull, .slab--ink .pull{color:var(--cream)}
-
-  /* ---------- MENU broadsheet ---------- */
-  .menu{
-    max-width:1100px; margin:0 auto;
-    display:grid; gap:clamp(40px,5vw,72px);
-  }
-  .menu__head{text-align:center; max-width:60ch; margin:0 auto}
-  .menu__head h2{font-size:clamp(2.6rem,6vw,5.4rem)}
-  .menu__head h2 em{font-style:italic; color:var(--crimson)}
-  .menu__cols{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:clamp(40px,5vw,80px);
-  }
-  .menu__col h3{
-    font-size:clamp(1.5rem,2vw + .8rem,2.4rem);
-    color:var(--crimson);
-    padding-bottom:14px;
-    border-bottom:1px solid color-mix(in srgb, var(--crimson) 40%, transparent);
-    margin-bottom:18px;
-  }
-  .menu__col h3 .cn{
-    font-family:var(--cn); font-weight:700; font-size:.65em;
-    color:var(--ink); opacity:.55; margin-left:.4em; letter-spacing:.04em;
-  }
-  .menu__list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:14px}
-  .menu__list li{
-    display:grid; grid-template-columns:1fr auto;
-    gap:10px; align-items:baseline;
-    padding-bottom:12px;
-    border-bottom:1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
-    font-size:15px;
-  }
-  .menu__list li:last-child{border-bottom:0}
-  .menu__name{font-family:var(--serif); font-size:17px; line-height:1.2}
-  .menu__name .heat{color:var(--crimson); font-family:var(--sans); font-size:11px; letter-spacing:.1em; margin-left:6px; vertical-align:1px}
-  .menu__note{
-    grid-column:1/-1;
-    font-size:13px; opacity:.7;
-    margin-top:2px;
-    line-height:1.4;
-  }
-  .menu__foot{
-    text-align:center;
-    font-size:13px; letter-spacing:.14em; text-transform:uppercase;
-    color:color-mix(in srgb, var(--ink) 70%, transparent);
-  }
-  .menu__foot strong{font-family:var(--serif); font-style:italic; text-transform:none; letter-spacing:0; color:var(--crimson); font-weight:400; font-size:18px}
-
-  /* ---------- GALLERY ---------- */
-  .gallery{
-    max-width:1280px; margin:0 auto;
-    display:grid; gap:clamp(20px,3vw,40px);
-  }
-  .gallery__head{display:flex; justify-content:space-between; align-items:end; flex-wrap:wrap; gap:20px}
-  .gallery__head h2{font-size:clamp(2.4rem,5vw,4.4rem)}
-  .gallery__grid{
-    display:grid;
-    grid-template-columns:repeat(12,1fr);
-    gap:clamp(12px,1.5vw,20px);
-  }
-  .tile{
-    border:1px dashed color-mix(in srgb, var(--cream) 55%, transparent);
-    background:
-      repeating-linear-gradient(135deg,
-        transparent 0 22px,
-        color-mix(in srgb, var(--cream) 12%, transparent) 22px 23px);
-    aspect-ratio:4/3;
-    display:flex; align-items:center; justify-content:center;
-    padding:24px; text-align:center;
-    font-family:var(--serif); font-style:italic;
-    color:color-mix(in srgb, var(--cream) 75%, transparent);
-    font-size:clamp(15px,1.2vw,18px);
-    line-height:1.3;
-  }
-  .tile--lg{grid-column:span 8; aspect-ratio:16/10}
-  .tile--md{grid-column:span 4}
-  .tile--sm{grid-column:span 4}
-  .tile--wide{grid-column:span 6}
-  @media (max-width:780px){
-    .tile,.tile--lg,.tile--md,.tile--sm,.tile--wide{grid-column:span 12; aspect-ratio:5/4}
-  }
-
-  /* ---------- CONTACT ---------- */
-  .contact{
-    max-width:1280px; margin:0 auto;
-    display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);
-    gap:clamp(30px,4vw,60px);
+    grid-template-columns: 1fr;
+    gap: clamp(1.4rem, 3vw, 2.6rem);
     align-items:start;
   }
-  .contact h2{font-size:clamp(2.6rem,5vw,4.8rem); margin-bottom:24px}
-  .contact h2 em{font-style:italic; color:var(--amber)}
-  .info-grid{
-    display:grid; gap:22px;
-    font-size:15px; line-height:1.5;
+  @media (min-width: 56rem){
+    .heat-grid{ grid-template-columns: 1fr 1fr }
   }
-  .info-grid dt{
-    font-size:11px; letter-spacing:.2em; text-transform:uppercase;
-    color:var(--amber);
-    margin-bottom:6px;
+  .heat-card{
+    border-top:1px solid color-mix(in srgb, var(--paper) 35%, transparent);
+    padding-top:1.4rem;
   }
-  .info-grid dd{margin:0; font-family:var(--serif); font-size:clamp(20px,1.6vw,26px); line-height:1.2}
-  .info-grid dd a:hover{color:var(--amber)}
-  .info-grid .small{font-family:var(--sans); font-size:14px; line-height:1.5; opacity:.85}
-  .map-wrap{
-    aspect-ratio:4/3;
-    border:1px solid color-mix(in srgb, var(--cream) 25%, transparent);
-    background:var(--ink);
-    overflow:hidden;
+  .heat-char{
+    font-family:var(--han);
+    font-weight:900;
+    font-size: clamp(5rem, 14vw, 11rem);
+    line-height:.9;
+    color:var(--paper);
+    display:block;
+    letter-spacing:-.02em;
   }
-  .map-wrap iframe{width:100%; height:100%; border:0; filter:grayscale(.3) contrast(1.05)}
-  @media (max-width:780px){.contact{grid-template-columns:1fr}}
-
-  /* ---------- FOOTER ---------- */
-  footer{
-    background:var(--ink); color:var(--cream);
-    padding:clamp(40px,5vw,72px) clamp(20px,4vw,64px) 32px;
-    border-top:4px solid var(--crimson);
+  .heat-name{
+    font-family:var(--display); font-weight:800;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+    margin-top:.4rem;
   }
-  .foot{
-    max-width:1280px; margin:0 auto;
-    display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:clamp(24px,3vw,48px);
-    padding-bottom:32px;
-    border-bottom:1px solid color-mix(in srgb, var(--cream) 18%, transparent);
-  }
-  .foot h3{
-    font-size:11px; letter-spacing:.22em; text-transform:uppercase;
-    color:var(--amber); font-family:var(--sans); font-weight:500;
-    margin-bottom:14px;
-  }
-  .foot p, .foot a{font-family:var(--serif); font-size:18px; line-height:1.4; display:block; margin:0 0 6px}
-  .foot a:hover{color:var(--amber)}
-  .foot__brand{font-family:var(--cn); font-weight:900; font-size:64px; color:var(--crimson); line-height:.85; letter-spacing:-.03em}
-  .foot__brand small{display:block; font-family:var(--serif); font-size:18px; color:var(--cream); margin-top:8px; letter-spacing:.05em}
-  .foot__legal{
-    max-width:1280px; margin:24px auto 0;
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
-    font-size:12px; letter-spacing:.06em; opacity:.7;
+  .heat-name em{ font-style:italic; color:var(--amber); font-weight:600 }
+  .heat-body{
+    font-family:var(--body);
+    font-size:1.05rem;
+    line-height:1.55;
+    max-width:42ch;
+    margin-top:.7rem;
+    color: color-mix(in srgb, var(--paper) 92%, var(--ink));
   }
 
-  /* ---------- REVEALS ---------- */
-  @supports (animation-timeline:view()){
+  /* MENU */
+  .menu-cats{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 4vw, 3.5rem);
+  }
+  @media (min-width: 56rem){
+    .menu-cats{ grid-template-columns: 1fr 1fr; gap: 2.5rem 4rem }
+  }
+  .menu-cat h3{
+    font-family:var(--display); font-weight:800;
+    font-size: clamp(1.3rem, 1.6vw + .8rem, 1.8rem);
+    letter-spacing:-.015em;
+    border-bottom:1px solid var(--rule);
+    padding-bottom:.5rem;
+    margin-bottom:1rem;
+    display:flex; align-items:baseline; justify-content:space-between; gap:1rem;
+  }
+  .menu-cat h3 .han{
+    font-family:var(--han); font-weight:700; color:var(--peppercorn);
+    font-size:.7em; letter-spacing:.05em;
+  }
+  .menu-cat ul{ list-style:none; padding:0; margin:0 }
+  .menu-cat li{
+    display:grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    padding: .65rem 0;
+    border-bottom: 1px dotted color-mix(in srgb, var(--rule) 35%, transparent);
+    align-items:baseline;
+  }
+  .dish{
+    display:flex; flex-direction:column; gap:.15rem;
+  }
+  .dish .name-han{
+    font-family:var(--han); font-weight:700;
+    font-size:1.15rem;
+    color:var(--ink);
+    line-height:1.15;
+  }
+  .dish .name-en{
+    font-family:var(--body);
+    font-style:italic;
+    font-size:.95rem;
+    color: color-mix(in srgb, var(--ink) 75%, transparent);
+    line-height:1.3;
+  }
+  .heat{
+    font-family:var(--display);
+    font-weight:700;
+    color:var(--cinnabar);
+    font-size:1rem;
+    letter-spacing:.1em;
+    align-self:center;
+    white-space:nowrap;
+  }
+  .heat[data-level="0"]{ color: color-mix(in srgb, var(--rule) 50%, transparent) }
+  .heat[data-level="0"]::before{ content:"○" }
+  .heat[data-level="1"]::before{ content:"●" }
+  .heat[data-level="2"]::before{ content:"●●" }
+  .heat[data-level="3"]::before{ content:"●●●" }
+
+  /* scroll-driven reveal */
+  @supports (animation-timeline: view()){
     .reveal{
-      animation:rise both;
-      animation-timeline:view();
-      animation-range:entry 0% cover 28%;
+      animation: rise both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
     }
     @keyframes rise{
-      from{opacity:0; transform:translateY(1.6rem)}
-      to{opacity:1; transform:translateY(0)}
+      from{ opacity:0; transform: translateY(1.2rem) }
+      to  { opacity:1; transform: translateY(0) }
     }
   }
-  @media (prefers-reduced-motion:reduce){
-    .reveal{animation:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ animation:none !important; opacity:1 !important; transform:none !important }
+  }
+
+  /* FIND US */
+  .find{
+    border-top:1px solid var(--rule);
+    background:var(--paper-warm);
+  }
+  .find-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap: clamp(1.4rem, 3vw, 2.4rem);
+    align-items:start;
+  }
+  @media (min-width: 56rem){
+    .find-grid{ grid-template-columns: 1.1fr .9fr; gap: 3.5rem }
+  }
+  .letterhead{
+    font-family:var(--display);
+    font-weight:600;
+    font-size: clamp(1.2rem, 1.6vw + .7rem, 1.8rem);
+    line-height:1.35;
+    letter-spacing:-.005em;
+  }
+  .letterhead .biggie{
+    display:block;
+    font-weight:800;
+    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    line-height:1;
+    letter-spacing:-.03em;
+    color:var(--ink);
+    margin-bottom:.8rem;
+  }
+  .letterhead .biggie .at{ color:var(--cinnabar); font-style:italic }
+  .letterhead a{ display:inline-block; transition:color .2s }
+  .letterhead a:hover{ color:var(--cinnabar) }
+  .letterhead .row{ display:block; margin-block:.25rem }
+  .letterhead .label{
+    font-size:.62rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--rule); display:block;
+    font-weight:600;
+    margin-bottom:.05rem;
+  }
+
+  .hours{
+    border:1px solid var(--rule);
+    padding: 1.2rem 1.4rem;
+    background: color-mix(in srgb, var(--paper) 80%, var(--paper-warm));
+  }
+  .hours h4{
+    font-family:var(--display); font-weight:800;
+    text-transform:uppercase; letter-spacing:.15em;
+    font-size:.75rem;
+    margin:0 0 .9rem;
+    color:var(--rule);
+  }
+  .hours ul{ list-style:none; padding:0; margin:0 }
+  .hours li{
+    display:flex; justify-content:space-between;
+    font-family:var(--display); font-weight:600;
+    font-size:1rem;
+    padding:.32rem 0;
+    border-bottom:1px dotted color-mix(in srgb, var(--rule) 30%, transparent);
+  }
+  .hours li:last-child{ border-bottom:0 }
+  .hours .day{ letter-spacing:.04em }
+  .hours .time{ font-variant-numeric: tabular-nums }
+  .order{
+    display:inline-flex; align-items:center; gap:.5rem;
+    margin-top:1.1rem;
+    background:var(--ink); color:var(--paper);
+    font-family:var(--display); font-weight:700;
+    text-transform:uppercase; letter-spacing:.12em;
+    font-size:.78rem;
+    padding:.85rem 1.1rem;
+    transition: background .2s, color .2s;
+  }
+  .order:hover{ background:var(--cinnabar); color:var(--paper) }
+  .order::after{ content:"→"; font-size:1rem; transition:transform .2s }
+  .order:hover::after{ transform:translateX(3px) }
+
+  /* FOOTER */
+  footer{
+    background:var(--ink); color: color-mix(in srgb, var(--paper) 80%, var(--ink));
+    padding: clamp(2rem, 4vw, 3rem) var(--gutter);
+    border-top:1px solid var(--ink);
+  }
+  .foot-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:2rem;
+    align-items:start;
+  }
+  @media (min-width: 48rem){
+    .foot-grid{ grid-template-columns: 2fr 1fr 1fr; gap:3rem }
+  }
+  .foot-mark{
+    font-family:var(--display); font-weight:800;
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    line-height:.9;
+    color:var(--paper);
+    letter-spacing:-.04em;
+  }
+  .foot-mark .at{ color:var(--cinnabar); font-style:italic }
+  .foot-mark .han{
+    display:block;
+    font-family:var(--han); font-weight:700;
+    font-size:.42em; letter-spacing:.1em;
+    color:var(--amber);
+    margin-top:.4rem;
+  }
+  .foot-block h5{
+    font-family:var(--display); font-weight:800;
+    text-transform:uppercase; letter-spacing:.18em;
+    font-size:.65rem;
+    margin:0 0 .8rem;
+    color:var(--amber);
+  }
+  .foot-block address, .foot-block p{
+    font-style:normal; margin:0;
+    font-family:var(--body); font-size:1rem; line-height:1.55;
+    color: color-mix(in srgb, var(--paper) 85%, var(--ink));
+  }
+  .foot-block a:hover{ color:var(--cinnabar) }
+  .colophon{
+    margin-top: clamp(2rem,4vw,3rem);
+    padding-top:1.2rem;
+    border-top:1px solid color-mix(in srgb, var(--paper) 14%, transparent);
+    font-family:var(--display);
+    font-size:.7rem; letter-spacing:.16em; text-transform:uppercase;
+    color: color-mix(in srgb, var(--paper) 50%, var(--ink));
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;
+  }
+
+  @media (max-width: 38rem){
+    .topbar{ font-size:.7rem; padding-inline: var(--gutter) }
+    .topbar .right a + a{ margin-left:.9rem }
+    .open-pill{ display:none }
+    .hide-sm{ display:none }
   }
 </style>
 </head>
 <body>
 
-<nav class="nav" aria-label="Primary">
-  <a href="#home" class="nav__brand">@72<em>.</em>china</a>
-  <div class="nav__links">
-    <a href="#about">About</a>
-    <a href="#menu">Menu</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
+<header class="topbar">
+  <div class="left">
+    <span class="han">@七十二</span>
+    <span class="hide-sm" style="margin-left:.9rem; color:var(--rule)">·</span>
+    <span class="hide-sm" style="margin-left:.9rem">Sichuan · Cambridge</span>
   </div>
-  <a class="nav__phone" href="tel:+441223956875">01223&nbsp;956875</a>
-</nav>
+  <div class="right">
+    <a href="#menu" class="link">Menu</a>
+    <a href="#heat" class="link hide-sm">麻 · 辣</a>
+    <a href="#find" class="link">Find us</a>
+    <span class="open-pill">Open · 12–22:30</span>
+  </div>
+</header>
 
-<!-- ============ HERO / HOME ============ -->
-<section class="hero" id="home">
-  <div class="hero__mark" aria-hidden="true">
-    七十二
-    <span>Regent St · CB2</span>
-  </div>
-  <div class="hero__right">
-    <span class="kicker">Sichuan &amp; Cantonese · Cambridge</span>
-    <h1>
-      <span class="hero__brandline">@72<em>.</em>China · Regent Street</span>
-      <span>Numbing heat, perfectly <em>balanced</em>.</span>
+<main>
+
+<section class="hero wrap" aria-labelledby="brandmark">
+  <div class="hero-grid">
+    <h1 id="brandmark" class="mark">
+      <span class="at">@</span>72<span class="dot">.</span>
+      <span class="china">China.</span>
     </h1>
-    <p class="hero__copy">
-      A proper Sichuan and Cantonese kitchen on Regent Street — chilli oil, fermented bean,
-      the slow burn of <em>málà</em>, alongside the wok-fire classics from the south.
-      Dine in, takeaway, or have us sent over.
-    </p>
-    <div class="hero__cta">
-      <a href="tel:+441223956875" class="btn">
-        Book a table <span class="btn__arrow">→</span>
-      </a>
-      <a href="#menu" class="btn btn--ghost">See the menu</a>
+
+    <div class="hero-sub">
+      <div class="han-tag" aria-label="má là chuān cài — numbing, spicy, Sichuan cuisine">
+        麻<span class="sep">·</span>辣<span class="sep">·</span>川菜
+      </div>
+      <p class="lede">
+        Authentic Sichuan cooking on Regent Street — <em>málà</em> noodles, dry pot, fish in chilli oil. No bain-marie, no buffet, no compromise.
+      </p>
     </div>
-    <dl class="hero__meta">
-      <div><dt>Open</dt><dd>11:30 – 22:30, daily</dd></div>
-      <div><dt>Find us</dt><dd>72 Regent Street, CB2 1DP</dd></div>
-      <div><dt>Call</dt><dd><a href="tel:+441223956875">01223 956875</a></dd></div>
+
+    <dl class="meta-row">
+      <div>
+        <dt>Find us at</dt>
+        <dd>72 Regent St &nbsp;·&nbsp; CB2 1DP</dd>
+      </div>
+      <div>
+        <dt>Reserve / Takeaway</dt>
+        <dd><a href="tel:+441223956875" class="link">01223 956 875</a></dd>
+      </div>
+      <div>
+        <dt>Open daily</dt>
+        <dd>12:00 — 22:30</dd>
+      </div>
     </dl>
   </div>
 </section>
 
-<!-- ============ MARQUEE ============ -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee__track">
-    <span>Salt &amp; Pepper Squid</span>
-    <span>Mapo Tofu</span>
-    <span>Sizzling Aubergine</span>
-    <span>Hot &amp; Sour Soup</span>
-    <span>Poached Chicken, Sichuan Chilli Oil</span>
-    <span>Double-Cooked Pork</span>
-    <span>Salt &amp; Pepper Squid</span>
-    <span>Mapo Tofu</span>
-    <span>Sizzling Aubergine</span>
-    <span>Hot &amp; Sour Soup</span>
-    <span>Poached Chicken, Sichuan Chilli Oil</span>
-    <span>Double-Cooked Pork</span>
+    <span class="item"><span class="han">麻辣过桥米线</span>Cross-bridge rice noodles</span><span class="sep"></span>
+    <span class="item"><span class="han">担担面</span>Dan dan noodles</span><span class="sep"></span>
+    <span class="item"><span class="han">水煮鱼</span>Fish in boiling chilli oil</span><span class="sep"></span>
+    <span class="item"><span class="han">干锅</span>Dry pot</span><span class="sep"></span>
+    <span class="item"><span class="han">酸辣粉</span>Sour &amp; spicy potato noodles</span><span class="sep"></span>
+    <span class="item"><span class="han">回锅肉</span>Twice-cooked pork</span><span class="sep"></span>
+    <span class="item"><span class="han">宫保鸡丁</span>Kung pao chicken</span><span class="sep"></span>
+    <span class="item"><span class="han">麻婆豆腐</span>Mapo tofu</span><span class="sep"></span>
+    <span class="item"><span class="han">麻辣过桥米线</span>Cross-bridge rice noodles</span><span class="sep"></span>
+    <span class="item"><span class="han">担担面</span>Dan dan noodles</span><span class="sep"></span>
+    <span class="item"><span class="han">水煮鱼</span>Fish in boiling chilli oil</span><span class="sep"></span>
+    <span class="item"><span class="han">干锅</span>Dry pot</span><span class="sep"></span>
+    <span class="item"><span class="han">酸辣粉</span>Sour &amp; spicy potato noodles</span><span class="sep"></span>
+    <span class="item"><span class="han">回锅肉</span>Twice-cooked pork</span><span class="sep"></span>
+    <span class="item"><span class="han">宫保鸡丁</span>Kung pao chicken</span><span class="sep"></span>
+    <span class="item"><span class="han">麻婆豆腐</span>Mapo tofu</span><span class="sep"></span>
   </div>
 </div>
 
-<!-- ============ ABOUT ============ -->
-<section class="slab slab--cream" id="about">
-  <div class="grid">
-    <div class="reveal">
-      <span class="kicker">About the kitchen</span>
-      <h2>Real Sichuan, on <em>Regent Street</em>.</h2>
+<section class="slab" id="heat" aria-labelledby="heat-title">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-num">01</div>
+      <h2 class="section-title" id="heat-title">
+        Two kinds of heat<span class="han">两种辣</span>
+      </h2>
     </div>
-    <div class="reveal">
-      <p class="lede">
-        @72.China sits a few doors south of Downing Street, between Lensfield Road and the Catholic Church.
-        We came to Cambridge with a single ambition — to cook Sichuan food the way it is cooked at home in
-        Chengdu: numbing, fragrant, deeply layered, never timid. Alongside it we keep a careful Cantonese
-        line — clean wok-fire, salt &amp; pepper, sweet vinegar — for the dishes our guests have loved here for years.
-      </p>
-      <p class="pull">
-        “If you've never had real málà — the cool buzz of Sichuan peppercorn behind the chilli — let this be where you try it.”
-      </p>
+
+    <div class="heat-grid">
+      <article class="heat-card reveal">
+        <span class="heat-char" aria-hidden="true">麻</span>
+        <h3 class="heat-name">Má <em>— the numbing</em></h3>
+        <p class="heat-body">
+          That fizzy, tingling buzz on the tongue isn't chilli — it's Sichuan peppercorn. Citrussy, floral, faintly anaesthetic. Locals call the sensation <em>málà</em>. First-timers think the dish is broken. Stay with it.
+        </p>
+      </article>
+      <article class="heat-card reveal">
+        <span class="heat-char" aria-hidden="true">辣</span>
+        <h3 class="heat-name">Là <em>— the spicy</em></h3>
+        <p class="heat-body">
+          Dried chillies, doubanjiang, sesame oil — building warmth, not punishment. Heat is graded on every menu page. If you want it dialled down, ask. If you want it dialled up, also ask.
+        </p>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ============ MENU ============ -->
-<section class="slab slab--paper" id="menu">
-  <div class="menu">
-    <header class="menu__head reveal">
-      <span class="kicker">A selection</span>
-      <h2>From the <em>kitchen</em></h2>
-      <p class="lede" style="margin:18px auto 0">
-        A reading of the menu — not the whole of it. Two hundred-odd dishes wait for you in the room.
-        Ask for the daily specials, and tell us how hot you'd like it.
-      </p>
-    </header>
+<section id="menu" class="wrap" aria-labelledby="menu-title">
+  <div class="section-head reveal">
+    <div class="section-num">02</div>
+    <h2 class="section-title" id="menu-title">
+      What we cook<span class="han">招牌菜</span>
+    </h2>
+  </div>
 
-    <div class="menu__cols reveal">
-      <div class="menu__col">
-        <h3>Sichuan classics <span class="cn">川菜</span></h3>
-        <ul class="menu__list">
-          <li><span class="menu__name">Mapo Tofu <span class="heat">MÁLÀ</span></span></li>
-          <li><span class="menu__name">Poached Chicken, Sichuan Chilli Oil <span class="heat">SPICY</span></span></li>
-          <li><span class="menu__name">Sizzling Aubergine in Garlic Sauce</span></li>
-          <li><span class="menu__name">Double-Cooked Sliced Pork <span class="heat">SPICY</span></span></li>
-          <li><span class="menu__name">Dry-Fried Green Beans, Minced Pork</span></li>
-          <li><span class="menu__name">Cumin Lamb, Sichuan Style <span class="heat">MÁLÀ</span></span></li>
+  <p style="max-width:60ch; margin: 0 0 2rem; font-size:1.05rem;" class="reveal">
+    A working selection from the kitchen. Prices and full menu in store — call ahead for the daily specials.
+  </p>
+
+  <div class="menu-cats">
+
+    <div class="menu-cat reveal">
+      <h3>Noodles <span class="han">面 · 粉</span></h3>
+      <ul>
+        <li>
+          <div class="dish">
+            <span class="name-han">麻辣过桥米线</span>
+            <span class="name-en">Cross-bridge rice noodles in málà broth</span>
+          </div>
+          <span class="heat" data-level="3" aria-label="three of three"></span>
+        </li>
+        <li>
+          <div class="dish">
+            <span class="name-han">担担面</span>
+            <span class="name-en">Dan dan noodles, minced pork, sesame</span>
+          </div>
+          <span class="heat" data-level="2" aria-label="two of three"></span>
+        </li>
+        <li>
+          <div class="dish">
+            <span class="name-han">酸辣粉</span>
+            <span class="name-en">Sour &amp; spicy potato starch noodles</span>
+          </div>
+          <span class="heat" data-level="2" aria-label="two of three"></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="menu-cat reveal">
+      <h3>Stir-fry &amp; Wok <span class="han">炒菜</span></h3>
+      <ul>
+        <li>
+          <div class="dish">
+            <span class="name-han">水煮鱼</span>
+            <span class="name-en">Sliced fish in boiling chilli oil</span>
+          </div>
+          <span class="heat" data-level="3"></span>
+        </li>
+        <li>
+          <div class="dish">
+            <span class="name-han">回锅肉</span>
+            <span class="name-en">Twice-cooked sliced pork, leek, doubanjiang</span>
+          </div>
+          <span class="heat" data-level="2"></span>
+        </li>
+        <li>
+          <div class="dish">
+            <span class="name-han">宫保鸡丁</span>
+            <span class="name-en">Kung pao chicken, peanuts, dried chillies</span>
+          </div>
+          <span class="heat" data-level="2"></span>
+        </li>
+        <li>
+          <div class="dish">
+            <span class="name-han">麻婆豆腐</span>
+            <span class="name-en">Mapo tofu, fermented bean, peppercorn</span>
+          </div>
+          <span class="heat" data-level="3"></span>
+        </li>
+        <li>
+          <div class="dish">
+            <span class="name-han">铁板茄子</span>
+            <span class="name-en">Sizzling aubergine, garlic, soy</span>
+          </div>
+          <span class="heat" data-level="1"></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="menu-cat reveal">
+      <h3>Dry pot &amp; Braise <span class="han">干锅 · 炖菜</span></h3>
+      <ul>
+        <li>
+          <div class="dish">
+            <span class="name-han">干锅 — 自选</span>
+            <span class="name-en">Dry pot, build your own — meats, vegetables, chilli</span>
+          </div>
+          <span class="heat" data-level="3"></span>
+        </li>
+        <li>
+          <div class="dish">
+            <span class="name-han">萝卜炖牛腩</span>
+            <span class="name-en">Stewed beef brisket with radish</span>
+          </div>
+          <span class="heat" data-level="1"></span>
+        </li>
+        <li>
+          <div class="dish">
+            <span class="name-han">排骨冬瓜汤</span>
+            <span class="name-en">Pork ribs &amp; winter melon soup</span>
+          </div>
+          <span class="heat" data-level="0"></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="menu-cat reveal">
+      <h3>Cold plates &amp; Snacks <span class="han">凉菜 · 小吃</span></h3>
+      <ul>
+        <li>
+          <div class="dish">
+            <span class="name-han">椒盐鱿鱼</span>
+            <span class="name-en">Salt &amp; pepper squid</span>
+          </div>
+          <span class="heat" data-level="1"></span>
+        </li>
+        <li>
+          <div class="dish">
+            <span class="name-han">口水鸡</span>
+            <span class="name-en">Mouth-watering chicken in Sichuan chilli oil</span>
+          </div>
+          <span class="heat" data-level="3"></span>
+        </li>
+        <li>
+          <div class="dish">
+            <span class="name-han">猪耳朵</span>
+            <span class="name-en">Cold-sliced pig's ears, sesame, coriander</span>
+          </div>
+          <span class="heat" data-level="2"></span>
+        </li>
+        <li>
+          <div class="dish">
+            <span class="name-han">橄榄菜豇豆肉末</span>
+            <span class="name-en">Green beans, minced pork, olive vegetable</span>
+          </div>
+          <span class="heat" data-level="1"></span>
+        </li>
+        <li>
+          <div class="dish">
+            <span class="name-han">广式烧鸭</span>
+            <span class="name-en">Cantonese roast duck</span>
+          </div>
+          <span class="heat" data-level="0"></span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p style="margin-top:2.5rem; font-size:.85rem; letter-spacing:.04em; color: color-mix(in srgb, var(--ink) 60%, transparent); max-width:60ch;" class="reveal">
+    A working selection — the in-store menu is longer and rotates with the season. Heat dots are a guide, not a contract. Allergens on request.
+  </p>
+</section>
+
+<section id="find" class="find">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-num">03</div>
+      <h2 class="section-title">
+        Find us<span class="han">联系我们</span>
+      </h2>
+    </div>
+
+    <div class="find-grid">
+      <div class="letterhead reveal">
+        <span class="biggie"><span class="at">@</span>72 Regent Street</span>
+        <span class="row">
+          <span class="label">Postcode</span>
+          Cambridge &nbsp;·&nbsp; CB2 1DP
+        </span>
+        <span class="row">
+          <span class="label">Telephone</span>
+          <a href="tel:+441223956875">01223 956 875</a>
+        </span>
+        <span class="row">
+          <span class="label">Walk-ins</span>
+          Welcome. Small room — call ahead for groups of 4+.
+        </span>
+        <a class="order" href="tel:+441223956875" aria-label="Call to order or book">Call to book</a>
+      </div>
+
+      <aside class="hours reveal" aria-label="Opening hours">
+        <h4>Opening hours</h4>
+        <ul>
+          <li><span class="day">Mon</span><span class="time">12:00 – 22:30</span></li>
+          <li><span class="day">Tue</span><span class="time">12:00 – 22:30</span></li>
+          <li><span class="day">Wed</span><span class="time">12:00 – 22:30</span></li>
+          <li><span class="day">Thu</span><span class="time">12:00 – 22:30</span></li>
+          <li><span class="day">Fri</span><span class="time">12:00 – 22:30</span></li>
+          <li><span class="day">Sat</span><span class="time">12:00 – 22:30</span></li>
+          <li><span class="day">Sun</span><span class="time">12:00 – 22:30</span></li>
         </ul>
-      </div>
-
-      <div class="menu__col">
-        <h3>Cantonese &amp; wok <span class="cn">粤菜</span></h3>
-        <ul class="menu__list">
-          <li><span class="menu__name">Salt &amp; Pepper Squid</span></li>
-          <li><span class="menu__name">Sweet &amp; Sour Pork, Hong Kong Style</span></li>
-          <li><span class="menu__name">Crispy Aromatic Duck</span></li>
-          <li><span class="menu__name">Beef &amp; Black Bean</span></li>
-          <li><span class="menu__name">Stir-Fried Chinese Greens, Garlic</span></li>
-          <li><span class="menu__name">King Prawn, Ginger &amp; Spring Onion</span></li>
-        </ul>
-      </div>
-
-      <div class="menu__col">
-        <h3>Soups &amp; small <span class="cn">小菜</span></h3>
-        <ul class="menu__list">
-          <li><span class="menu__name">Hot &amp; Sour Soup <span class="heat">SPICY</span></span></li>
-          <li><span class="menu__name">Wonton Soup</span></li>
-          <li><span class="menu__name">Sweetcorn &amp; Chicken Soup</span></li>
-          <li><span class="menu__name">Steamed Pork Dumplings</span></li>
-          <li><span class="menu__name">Crispy Seaweed</span></li>
-          <li><span class="menu__name">Sichuan Pickled Vegetables</span></li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="menu__foot reveal">
-      Full menu in the restaurant · over <strong>two hundred dishes</strong> · ask for daily specials
-    </p>
-  </div>
-</section>
-
-<!-- ============ SERVICES BAND ============ -->
-<section class="slab slab--crimson">
-  <div class="grid grid--reverse">
-    <div class="reveal">
-      <span class="kicker">How to eat with us</span>
-      <h2>Dine in. <em>Takeaway.</em> Delivered.</h2>
-    </div>
-    <div class="reveal">
-      <p class="lede">
-        Tables for two, tables for ten. Reservations welcome — call us, particularly on a Friday and Saturday.
-        We pack a tight takeaway: phone ahead, twenty minutes, ready to go from the counter.
-        And we're on Deliveroo across central Cambridge if you'd rather we came to you.
-      </p>
-      <div class="hero__cta" style="margin-top:18px">
-        <a href="tel:+441223956875" class="btn" style="background:var(--cream); color:var(--ink); border-color:var(--cream)">
-          Call to reserve <span class="btn__arrow">→</span>
-        </a>
-      </div>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- ============ GALLERY ============ -->
-<section class="slab slab--ink" id="gallery">
-  <div class="gallery">
-    <header class="gallery__head reveal">
-      <div>
-        <span class="kicker">The room &amp; the food</span>
-        <h2>A few <em style="font-style:italic;color:var(--amber)">photographs</em></h2>
-      </div>
-      <p style="max-width:36ch; opacity:.85">
-        Photographs of the kitchen, the room, the dishes — to be added shortly.
-        Pop in for the real thing in the meantime.
-      </p>
-    </header>
-    <div class="gallery__grid reveal">
-      <div class="tile tile--lg">Dining room · evening</div>
-      <div class="tile tile--md">Mapo tofu</div>
-      <div class="tile tile--sm">Salt &amp; pepper squid</div>
-      <div class="tile tile--sm">Crispy duck</div>
-      <div class="tile tile--wide">The wok line</div>
-      <div class="tile tile--md">Sichuan peppercorn</div>
-    </div>
-  </div>
-</section>
+</main>
 
-<!-- ============ CONTACT ============ -->
-<section class="slab slab--ink" id="contact" style="padding-top:0">
-  <div class="contact">
-    <div class="reveal">
-      <span class="kicker">Find us</span>
-      <h2>72 Regent Street, <em>CB2 1DP</em></h2>
-      <dl class="info-grid">
-        <div>
-          <dt>Call</dt>
-          <dd><a href="tel:+441223956875">01223 956875</a></dd>
-        </div>
-        <div>
-          <dt>Address</dt>
-          <dd>72 Regent Street<br>Cambridge<br>CB2 1DP</dd>
-        </div>
-        <div>
-          <dt>Open</dt>
-          <dd>Monday – Sunday<br>11:30 – 22:30</dd>
-          <dd class="small">Last orders 22:00 · Bank holiday hours may vary</dd>
-        </div>
-        <div>
-          <dt>How we serve</dt>
-          <dd class="small">
-            Dine in · Takeaway · Delivery via Deliveroo (central Cambridge) ·
-            Reservations welcome
-          </dd>
-        </div>
-      </dl>
-    </div>
-    <div class="reveal">
-      <div class="map-wrap">
-        <iframe
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Map to 72 Regent Street, Cambridge CB2 1DP"
-          src="https://www.google.com/maps?q=72+Regent+Street,+Cambridge+CB2+1DP&output=embed"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ FOOTER ============ -->
 <footer>
-  <div class="foot">
-    <div>
-      <div class="foot__brand">七十二<small>@72.china · Regent St</small></div>
+  <div class="foot-grid">
+    <div class="foot-mark">
+      <span class="at">@</span>72<span style="color:var(--cinnabar)">.</span>China
+      <span class="han">川菜 · 剑桥</span>
     </div>
-    <div>
-      <h3>Visit</h3>
-      <p>72 Regent Street<br>Cambridge<br>CB2 1DP</p>
+
+    <div class="foot-block">
+      <h5>Visit</h5>
+      <address>
+        72 Regent Street<br>
+        Cambridge<br>
+        CB2 1DP
+      </address>
     </div>
-    <div>
-      <h3>Reserve</h3>
-      <a href="tel:+441223956875">01223 956875</a>
-      <a href="#menu">View menu</a>
-    </div>
-    <div>
-      <h3>Open</h3>
-      <p>Mon – Sun<br>11:30 – 22:30</p>
+
+    <div class="foot-block">
+      <h5>Call</h5>
+      <p><a href="tel:+441223956875" class="link">01223 956 875</a></p>
+      <p style="margin-top:.6rem; font-size:.85rem;">Open daily 12:00 – 22:30</p>
     </div>
   </div>
-  <div class="foot__legal">
-    <span>© @72.China, Cambridge</span>
-    <span>Sichuan &amp; Cantonese · est. on Regent Street</span>
+
+  <div class="colophon">
+    <span>© @72.China · Cambridge</span>
+    <span>Sichuan cuisine · CB2 1DP</span>
   </div>
 </footer>
 
